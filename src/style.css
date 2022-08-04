@@ -129,9 +129,6 @@ a {
     height: 100vh;
 }
 
-
-
-
 .recepie--header--main {
     color: antiquewhite;
     cursor:grab;
@@ -165,7 +162,7 @@ a {
 }
 
 .header__content h1 {
-    font-size: 200px;
+    font-size: 4rem;
     
 }
 
@@ -196,6 +193,7 @@ a {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    text-align: center;
     
    
 }
@@ -232,6 +230,8 @@ a {
     position: relative;
     /* height: 100vh; */
     border: transparent 1px solid;
+
+    display: none;
 }
 
 .stack-cards h1 {
@@ -330,7 +330,7 @@ a {
 	list-style: none;
 	outline: calc(var(--outline-width) * 10) solid blue;
 	
-	display: grid;
+
 	grid-template-columns: 1fr;
 	grid-template-rows: repeat(var(--numcards), var(--card-height));
 	gap: var(--card-margin);
@@ -410,6 +410,11 @@ a {
 .container-inputs {
     justify-content: space-evenly;
     min-height: 100vh;
+    flex-direction: column;
+    gap: 1rem;
+    width: 90vw;
+    margin: 0 auto;
+    margin-bottom: 2rem;
 }
 
 .container-inputs .btn {
@@ -427,10 +432,12 @@ a {
 
 .container-add {
     align-items: baseline;
-    justify-content: flex-end;
-    width: 100%;
-    gap: 1rem;
+    gap: .3rem;
     padding: 1rem;
+}
+
+.container-delete button {
+    margin-bottom: 1rem;
 }
 
 .recepie-header {
@@ -451,6 +458,7 @@ a {
     padding: 2rem;
     box-shadow: var(--box-shadow-pos);
     border-radius: 10px;
+    width: 90%;
 }
 
 .title-details {
@@ -463,9 +471,7 @@ a {
     cursor: pointer;
 }
 
-.recepie-items {
-    width: 40vw;
-}
+
 
 .ingredients-list {
     justify-content:flex-start;
@@ -636,6 +642,11 @@ input[type="number"] {
     padding-bottom: 10vh;
     text-align: center;
 }
+.ingredients,
+.suggestions,
+.instructions {
+   text-align: center;
+}
 
 .ingredient__list {
     counter-reset: days-counter;
@@ -755,6 +766,49 @@ body > .tips {
 /* #region media */
 
 @media screen and (min-width: 700px) {
+/* #region hero */
+.header__content h1 {
+    font-size: 7rem;
+    
+}
+
+#cards {
+    display: grid;
+}
+
+}
+
+/* #endregion */
+   
+@media (min-width: 1100px) {
+    .stack-cards {
+        display: block;
+    }
+
+    .container-inputs {
+        flex-direction: row;
+        gap: 3rem;
+    }
+
+    .container-storage {
+    width: 40%;
+}
+
+
+    .container-add {
+        justify-content: flex-end;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .recepie-items {
+        width: 40vw;
+    }
+    
+}
+
+@media (min-width: 1300px) {
+     /* #region other-page */
 	.tips {
 		display: flex;
 		flex-wrap: wrap;
@@ -943,6 +997,23 @@ body > .tips {
 
     }
 
+    .ingredients,
+    .suggestions,
+    .instructions {
+    color: black;
+    text-align: none;
+    }
+}
+
+@media (hover:hover) {
+    .btn:hover {
+        background-color: black;
+        color: var(--pink);
+    }
+
+    .recepie-list li:hover {
+        color: var(--pink);
+    }
 }
 
 

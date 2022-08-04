@@ -1014,6 +1014,11 @@ body > .tips {
     .recepie-list li:hover {
         color: var(--pink);
     }
+
+    .recepie--header--main:hover {
+        color: var(--pink);
+        border-bottom: 10px solid antiquewhite;
+    }
 }
 
 

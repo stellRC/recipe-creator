@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Getting Started</title>
+    <link rel="stylesheet" href="../src/style.css">
+    <script src="./clear.bundle.js"></script>
+    <script src="./ingredient.bundle.js"></script>
+    <script src="./createRecipe.bundle.js"></script>
+    <script src="./save.bundle.js"></script>
+    <script src="./renderIngredientCount.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <header class="cookbook--header">
+      <div class="header__content">
+          <h1>Recepies</h1>
+      </div>
+  </header>
+  <main>
+      <section class="about">
+          <h2>Check out recepies and tips!</h2>
+          <div class="banner"></div>
+          <h2>Submit your own!</h2>
+          <div class="banner"></div>
+      </section>
+      <section class="stack-cards">
+          <h1>Recepie Cards</h1>
+          <ul id="cards">
+              <li class="card" id="card__1">
+                  <div class="card__content">
+                      <section>
+                          <h2>Empanadas</h2>
+                          <p>
+                              Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                            
+                          </p>
+                          <a class="btn btn--accent" href="recepies.html#empanadas">Recepie</a> 
+                      </section>
+                      <figure class="img__container">
+                          <img class="card--img card--img__one" ></img>
+                      </figure>
+                  </div>
+              </li>
+              <li class="card" id="card__2">
+                  <div class="card__content">
+                      <section>
+                          <h2>Oatmeal Raisin Cookies</h2>
+                          <p>
+                              Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                              
+                          </p>
+                          <a class="btn btn--accent" href="recepies.html#oatmeal-raisin-cookies">Recepie</a> 
+                      </section>
+                      <figure class="img__container">
+                          <img class="card--img card--img__two" ></img>
+                      </figure>
+                  </div>
+              </li>
+              <li class="card" id="card__3">
+                  <div class="card__content">
+                      <section>
+                          <h2>Popovers</h2>
+                          <p>
+                              Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                             
+                          </p>
+                          <a class="btn btn--accent" href="recepies.html#popovers">Recepie</a> 
+                      </section>
+                      <figure class="img__container">
+                          <img class="card--img card--img__three" ></img>
+                      </figure>
+                  </div>
+              </li>
+  
+              <li class="card" id="card__4">
+                  <div class="card__content">
+                      <section>
+                          <h2>Pretzels</h2>
+                          <p>
+                              Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                              
+                          </p>
+                          <a class="btn btn--accent" href="recepies.html#pretzels">Recepie</a> 
+                      </section>
+                      <figure class="img__container">
+                          <img class="card--img card--img__four" ></img>
+                      </figure>
+                  </div>
+              </li>
+          </ul>
+      </section>
+          <section class="container-inputs flex">
+              <section class="container-storage">
+                  <ul class="recepie-list" data-recipes></ul>
+                  <form class="container-input flex" data-new-recipe-form>
+                      <section class="title-details flex">
+                          <input type="text" placeholder="New Recipe" name="recepie-title" data-new-recipe-input aria-label="new recepie name">
+                          <button type="submit" class="btn btn-submit">+</button>
+                      </section>
+                  </form>
+              </section>
+              <section class="container-list flex" data-recipe-display-container>
+                  <header class="recepie-header flex">
+                      <h2 class="recepie-title" data-recipe-title></h2>
+                      <span class="task-count" data-ingredient-count></span>
+                  </header>
+                  <form action="" data-new-ingredient-form class="container-form-add">
+                      <section class="container-add flex">
+                          <input type="text" class="ingredient" placeholder="ingredient" data-new-ingredient-input>
+                          <input type="number" min="1" data-new-ingredient-amount placeholder="amount">
+                          <select name="measurement" id="measure-options" data-new-ingredient-measurement>
+                              <option value="--">--</option>
+                              <option value="Ts">Ts</option>
+                              <option value="Tb">Tb</option>
+                              <option value="Cup">Cup</option>
+                              <option value="Oz">Oz</option>
+                          </select>
+                          <button class="btn create" aria-label="create new task">+</button>
+                      </section>
+                  </form>
+                  <section class="recepie-items">
+                      <ul class="ingredients-list flex" data-ingredients></ul>
+                  </section>
+                  <section class="container-delete">
+                      <button class="btn delete" data-clear-complete-ingredients-button>Clear Checked Ingredients</button>
+                      <button class="btn delete" data-delete-recipe-button>Delete Recipe</button>
+                  </section>
+              </section>
+          </section>
+  </main>
+  <template id="ingredient-template">
+      <li class="ingredient">
+        <span class="custom-checkbox" data-checkbox></span>
+        <input type="checkbox">
+        <label></label>
+        <span class="ingredient-amount"></span>
+        <span class="ingredient-measurement"></span>
+      </li>
+  </template>
+    <script src="./index.bundle.js"></script>
+  </body>
+</html>
